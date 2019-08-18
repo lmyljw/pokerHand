@@ -26,6 +26,7 @@ public class PokerHand {
                 result = comparePair(player1PokerMap, player2PokerMap);
             }
         }
+
         if(result == 0){
             result = compareHighCard(cards1, cards2);
         }
@@ -71,19 +72,28 @@ public class PokerHand {
     }
 
     public int comparePair(Map<Integer, Long> player1PokerMap,Map<Integer, Long> player2PokerMap){
-        int player1PairNumber = 0;
-        int player2PairNumber = 0;
 
-        for (Integer number : player1PokerMap.keySet()) {
-            Long count = player1PokerMap.get(number);
-            if (count == 2) player1PairNumber = number;
-        }
-
-        for (Integer number : player2PokerMap.keySet()) {
-            Long count = player2PokerMap.get(number);
-            if (count == 2) player2PairNumber = number;
-        }
+        int player1PairNumber = getPairNumber(player1PokerMap);
+        int player2PairNumber = getPairNumber(player2PokerMap);
 
         return Integer.compare(player1PairNumber, player2PairNumber);
+
+    }
+
+    public int getPairNumber(Map<Integer, Long> playerPokerMap){
+
+        int playerPairNumber = 0;
+
+        for (Integer number : playerPokerMap.keySet()) {
+            Long count = playerPokerMap.get(number);
+            if (count == 2) {
+                if (number > playerPairNumber){
+                    playerPairNumber = number;
+                }
+            }
+        }
+
+        return playerPairNumber;
+
     }
 }

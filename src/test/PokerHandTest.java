@@ -60,8 +60,13 @@ public class PokerHandTest {
         assertEquals(PokerHand.PLAYER_1_WIN, actual);
     }
     @Test
-    public void should_return_player_2_win_when_input_7S_7C_8C_8D_1S_and_7D_7H_8H_5H_1H() {
+    public void should_return_player_2_win_when_input_7S_7C_8C_8D_1S_and_7D_7H_8H_8S_3H() {
         String actual = pokerHand.play("7S 7C 8C 8D 1S", "7D 7H 8H 8S 3H");
         assertEquals(PokerHand.PLAYER_2_WIN, actual);
+    }
+    @Test
+    public void should_return_peace_when_input_7S_7C_8C_8D_1S_and_7D_7H_8H_8S_1H() {
+        String actual = pokerHand.play("7S 7C 8C 8D 1S", "7D 7H 8H 8S 1H");
+        assertEquals(PokerHand.PEACE, actual);
     }
 }
