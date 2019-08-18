@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import static java.util.stream.IntStream.range;
+
 public class PokerHand {
 
     public final static String PLAYER_1_WIN = "Player 1 Win";
@@ -38,7 +40,10 @@ public class PokerHand {
         if(result == 0){
             List<Poker> player1Poker = sortCards(cards1);
             List<Poker> player2Poker = sortCards(cards2);
-            result = player1Poker.get(0).compareTo(player2Poker.get(0));
+            for (int i = 0; i < player1Poker.size(); i++) {
+                result = player1Poker.get(i).compareTo(player2Poker.get(i));
+                if(result!=0)break;
+            }
         }
 
         if (result > 0) {
