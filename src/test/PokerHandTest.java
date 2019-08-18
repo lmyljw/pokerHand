@@ -14,4 +14,9 @@ public class PokerHandTest {
         String actual = pokerHand.exec("7C", "5D");
         assertEquals(pokerHand.PLAYER_1_WIN, actual);
     }
+    @Test
+    public void should_return_peace_when_input_7C_and_7D() {
+        String actual = pokerHand.exec("7C", "7D");
+        assertEquals(pokerHand.PEACE, actual);
+    }
 }
