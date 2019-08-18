@@ -13,12 +13,28 @@ public class PokerHand {
     public final static String PEACE = "Peace";
 
     public String play(String cards1, String cards2) {
+        int result = 0;
 
         Map<Integer, Long> player1PokerMap = mapCards(cards1);
         Map<Integer, Long> player2PokerMap = mapCards(cards2);
 
-        int result = -(Integer.compare(player1PokerMap.size(),player2PokerMap.size()));
+        if(player1PokerMap.size() < 5 || player2PokerMap.size() < 5){
+            result = -(Integer.compare(player1PokerMap.size(),player2PokerMap.size()));
+            if(result == 0) {
+                int player1PairNumber = 0;
+                int player2PairNumber = 0;
+                for (Integer number : player1PokerMap.keySet()) {
+                    Long count = player1PokerMap.get(number);
+                    if (count == 2) player1PairNumber = number;
+                }
+                for (Integer number : player2PokerMap.keySet()) {
+                    Long count = player2PokerMap.get(number);
+                    if (count == 2) player2PairNumber = number;
+                }
+                result = Integer.compare(player1PairNumber, player2PairNumber);
+            }
 
+        }
         if(result == 0){
             List<Poker> player1Poker = sortCards(cards1);
             List<Poker> player2Poker = sortCards(cards2);
