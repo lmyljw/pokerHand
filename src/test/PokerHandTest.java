@@ -22,6 +22,6 @@ public class PokerHandTest {
     @Test
     public void should_return_player_2_win_when_input_7C_and_TD() {
         String actual = pokerHand.exec("7C", "TD");
-        assertEquals(pokerHand.PEACE, actual);
+        assertEquals(pokerHand.PLAYER_2_WIN, actual);
     }
 }
