@@ -1,16 +1,22 @@
 package main.java;
 
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class PokerHand {
 
     public final static String PLAYER_1_WIN = "Player 1 Win";
     public final static String PLAYER_2_WIN = "Player 2 Win";
     public final static String PEACE = "Peace";
 
-    public String play(String card1, String card2) {
+    public String play(String cards1, String cards2) {
 
-        Poker player1Poker = new Poker(card1.substring(0,1),card1.substring(1,2));
-        Poker player2Poker = new Poker(card2.substring(0,1),card2.substring(1,2));
-        int result = player1Poker.compareTo(player2Poker);
+        List<Poker> player1Poker = sortCards(cards1);
+        List<Poker> player2Poker = sortCards(cards2);
+
+        int result = player1Poker.get(0).compareTo(player2Poker.get(0));
 
         if (result > 0) {
             return PLAYER_1_WIN;
@@ -20,5 +26,12 @@ public class PokerHand {
             return PEACE;
         }
 
+    }
+
+    public List<Poker> sortCards(String cards){
+        return (List<Poker>) Arrays.stream(cards.split(" "))
+                .map(card -> new Poker(card.substring(0, 1), card.substring(1, 2)))
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.toList());
     }
 }
