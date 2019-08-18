@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class PokerHandTest {
+public class PokerCardHandTest {
 
     private PokerHand pokerHand = new PokerHand();
 

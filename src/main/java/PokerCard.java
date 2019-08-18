@@ -1,13 +1,13 @@
 package main.java;
 
-public class Poker implements Comparable<Poker>{
+public class PokerCard implements Comparable<PokerCard>{
 
     private int number;
     private String color;
     private int count;
 
 
-    public Poker(String number, String color) {
+    public PokerCard(String number, String color) {
         this.color = color;
 
         if(number.equals("T")){
@@ -23,7 +23,7 @@ public class Poker implements Comparable<Poker>{
         }
     }
 
-    public Poker() {
+    public PokerCard() {
     }
 
     public int getNumber() {
@@ -43,7 +43,7 @@ public class Poker implements Comparable<Poker>{
     }
 
     @Override
-    public int compareTo(Poker poker) {
-        return Integer.compare(number, poker.getNumber());
+    public int compareTo(PokerCard pokerCard) {
+        return Integer.compare(number, pokerCard.getNumber());
     }
 }

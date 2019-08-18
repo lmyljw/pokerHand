@@ -12,13 +12,13 @@ public class PokerHand {
     public String play(String cards1, String cards2) {
 
         int result = 0;
-        Map<Integer, Long> player1PokerMap = mapCards(cards1);
-        Map<Integer, Long> player2PokerMap = mapCards(cards2);
+        Map<Integer, Long> player1PokerCardMap = mapCards(cards1);
+        Map<Integer, Long> player2PokerCardMap = mapCards(cards2);
 
-        if(player1PokerMap.size() < 5 || player2PokerMap.size() < 5){
-            result = -(Integer.compare(player1PokerMap.size(),player2PokerMap.size()));
+        if(player1PokerCardMap.size() < 5 || player2PokerCardMap.size() < 5){
+            result = -(Integer.compare(player1PokerCardMap.size(),player2PokerCardMap.size()));
             if(result == 0) {
-                result = compareMaxPoker(player1PokerMap, player2PokerMap);
+                result = compareMaxPokerCard(player1PokerCardMap, player2PokerCardMap);
             }
         }
 
@@ -32,13 +32,13 @@ public class PokerHand {
 
     public Map<Integer,Long> mapCards(String cards){
         return Arrays.stream(cards.split(" "))
-                .map(card -> new Poker(card.substring(0, 1), card.substring(1, 2)))
-                .collect(Collectors.groupingBy(Poker::getNumber,Collectors.counting()));
+                .map(card -> new PokerCard(card.substring(0, 1), card.substring(1, 2)))
+                .collect(Collectors.groupingBy(PokerCard::getNumber,Collectors.counting()));
     }
 
-    public List<Poker> sortCards(String cards){
-        return (List<Poker>) Arrays.stream(cards.split(" "))
-                .map(card -> new Poker(card.substring(0, 1), card.substring(1, 2)))
+    public List<PokerCard> sortCards(String cards){
+        return (List<PokerCard>) Arrays.stream(cards.split(" "))
+                .map(card -> new PokerCard(card.substring(0, 1), card.substring(1, 2)))
                 .sorted(Comparator.reverseOrder())
                 .collect(Collectors.toList());
     }
@@ -46,11 +46,11 @@ public class PokerHand {
     public int compareHighCard(String cards1, String cards2){
         int result = 0;
 
-        List<Poker> player1Poker = sortCards(cards1);
-        List<Poker> player2Poker = sortCards(cards2);
+        List<PokerCard> player1PokerCard = sortCards(cards1);
+        List<PokerCard> player2PokerCard = sortCards(cards2);
 
-        for (int i = 0; i < player1Poker.size(); i++) {
-            result = player1Poker.get(i).compareTo(player2Poker.get(i));
+        for (int i = 0; i < player1PokerCard.size(); i++) {
+            result = player1PokerCard.get(i).compareTo(player2PokerCard.get(i));
             if(result!=0)break;
         }
         return result;
@@ -66,33 +66,33 @@ public class PokerHand {
         }
     }
 
-    public int compareMaxPoker(Map<Integer, Long> player1PokerMap, Map<Integer, Long> player2PokerMap){
+    public int compareMaxPokerCard(Map<Integer, Long> player1PokerMap, Map<Integer, Long> player2PokerMap){
         int result = 0;
 
-        Poker player1MaxPoker = getMaxPoker(player1PokerMap);
-        Poker player2MaxPoker = getMaxPoker(player2PokerMap);
+        PokerCard player1MaxPokerCard = getMaxPokerCard(player1PokerMap);
+        PokerCard player2MaxPokerCard = getMaxPokerCard(player2PokerMap);
 
-        result = Integer.compare(player1MaxPoker.getCount(), player2MaxPoker.getCount());
+        result = Integer.compare(player1MaxPokerCard.getCount(), player2MaxPokerCard.getCount());
         if(result == 0){
-            result = player1MaxPoker.compareTo(player2MaxPoker);
+            result = player1MaxPokerCard.compareTo(player2MaxPokerCard);
         }
         return result;
     }
 
-    public Poker getMaxPoker(Map<Integer, Long> playerPokerMap){
+    public PokerCard getMaxPokerCard(Map<Integer, Long> playerPokerMap){
 
-        int playerPairNumber = 0;
-        Poker maxPoker = new Poker();
+        int playerMaxNumber = 0;
+        PokerCard maxPokerCard = new PokerCard();
 
         for (Integer number : playerPokerMap.keySet()) {
             Long count = playerPokerMap.get(number);
             if (count >= 2) {
-                if (number > playerPairNumber || count > playerPokerMap.get(playerPairNumber)){
-                    maxPoker.setNumber(number);
-                    maxPoker.setCount(count.intValue());
+                if (number > playerMaxNumber || count > playerPokerMap.get(playerMaxNumber)){
+                    maxPokerCard.setNumber(number);
+                    maxPokerCard.setCount(count.intValue());
                 }
             }
         }
-        return maxPoker;
+        return maxPokerCard;
     }
 }
