@@ -15,44 +15,22 @@ public class PokerHand {
     public final static String PEACE = "Peace";
 
     public String play(String cards1, String cards2) {
-        int result = 0;
 
+        int result = 0;
         Map<Integer, Long> player1PokerMap = mapCards(cards1);
         Map<Integer, Long> player2PokerMap = mapCards(cards2);
 
         if(player1PokerMap.size() < 5 || player2PokerMap.size() < 5){
             result = -(Integer.compare(player1PokerMap.size(),player2PokerMap.size()));
             if(result == 0) {
-                int player1PairNumber = 0;
-                int player2PairNumber = 0;
-                for (Integer number : player1PokerMap.keySet()) {
-                    Long count = player1PokerMap.get(number);
-                    if (count == 2) player1PairNumber = number;
-                }
-                for (Integer number : player2PokerMap.keySet()) {
-                    Long count = player2PokerMap.get(number);
-                    if (count == 2) player2PairNumber = number;
-                }
-                result = Integer.compare(player1PairNumber, player2PairNumber);
+                result = comparePair(player1PokerMap, player2PokerMap);
             }
-
         }
         if(result == 0){
-            List<Poker> player1Poker = sortCards(cards1);
-            List<Poker> player2Poker = sortCards(cards2);
-            for (int i = 0; i < player1Poker.size(); i++) {
-                result = player1Poker.get(i).compareTo(player2Poker.get(i));
-                if(result!=0)break;
-            }
+            result = compareHighCard(cards1, cards2);
         }
 
-        if (result > 0) {
-            return PLAYER_1_WIN;
-        } else if (result < 0) {
-            return PLAYER_2_WIN;
-        } else {
-            return PEACE;
-        }
+        return getFinalResult(result);
 
     }
 
@@ -67,5 +45,45 @@ public class PokerHand {
                 .map(card -> new Poker(card.substring(0, 1), card.substring(1, 2)))
                 .sorted(Comparator.reverseOrder())
                 .collect(Collectors.toList());
+    }
+
+    public int compareHighCard(String cards1, String cards2){
+        int result = 0;
+
+        List<Poker> player1Poker = sortCards(cards1);
+        List<Poker> player2Poker = sortCards(cards2);
+
+        for (int i = 0; i < player1Poker.size(); i++) {
+            result = player1Poker.get(i).compareTo(player2Poker.get(i));
+            if(result!=0)break;
+        }
+        return result;
+    }
+
+    public String getFinalResult(int result){
+        if (result > 0) {
+            return PLAYER_1_WIN;
+        } else if (result < 0) {
+            return PLAYER_2_WIN;
+        } else {
+            return PEACE;
+        }
+    }
+
+    public int comparePair(Map<Integer, Long> player1PokerMap,Map<Integer, Long> player2PokerMap){
+        int player1PairNumber = 0;
+        int player2PairNumber = 0;
+
+        for (Integer number : player1PokerMap.keySet()) {
+            Long count = player1PokerMap.get(number);
+            if (count == 2) player1PairNumber = number;
+        }
+
+        for (Integer number : player2PokerMap.keySet()) {
+            Long count = player2PokerMap.get(number);
+            if (count == 2) player2PairNumber = number;
+        }
+
+        return Integer.compare(player1PairNumber, player2PairNumber);
     }
 }
