@@ -31,7 +31,7 @@ public class PokerHandTest {
     }
     @Test
     public void should_return_player_2_win_when_input_3S_9H_KC_5D_1S_and_5S_5H_9C_3H_1H() {
-        String actual = pokerHand.play("3S 9H KC 5D 1S", "5S 5H 9C 3H 1H");//(5:2,9:1,3:1,1:1)
+        String actual = pokerHand.play("3S 9H KC 5D 1S", "5S 5H 9C 3H 1H");
         assertEquals(PokerHand.PLAYER_2_WIN, actual);
     }
     @Test
@@ -70,8 +70,8 @@ public class PokerHandTest {
         assertEquals(PokerHand.PEACE, actual);
     }
     @Test
-    public void should_return_player_1_win_when_input_7S_7C_7H_8D_1S_and_7D_3C_8H_8S_1H() {
-        String actual = pokerHand.play("7S 7C 7H 8D 1S", "7D 7H 8H 8S 1H");
+    public void should_return_player_1_win_when_input_7S_7C_7H_8D_1S_and_6D_6C_8H_8S_1H() {
+        String actual = pokerHand.play("7S 7C 7H 8D 1S", "6D 6H 8H 8S 1H");
         assertEquals(PokerHand.PLAYER_1_WIN, actual);
     }
 }
