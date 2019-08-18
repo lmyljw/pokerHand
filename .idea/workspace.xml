@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1ecf904b-83e7-484d-9778-9e69245addd9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/poker/test/PokerHandTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/poker/test/PokerHandTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PokerHand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PokerHand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/poker/main/java/PokerHand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/poker/main/java/PokerHand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/PokerHandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/PokerHandTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,8 +21,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/PokerHand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="84" column="11" lean-forward="true" selection-start-line="84" selection-start-column="11" selection-end-line="84" selection-end-column="11" />
+            <state relative-caret-position="228">
+              <caret line="84" column="33" lean-forward="true" selection-start-line="84" selection-start-column="33" selection-end-line="84" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -46,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/PokerHandTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1311">
-              <caret line="69" column="36" selection-start-line="69" selection-start-column="36" selection-end-line="69" selection-end-column="36" />
+            <state relative-caret-position="209">
+              <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -157,8 +156,8 @@
         <option value="$PROJECT_DIR$/src/main/java/PokerHandTest.java" />
         <option value="$PROJECT_DIR$/src/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Poker.java" />
-        <option value="$PROJECT_DIR$/src/test/PokerHandTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/PokerHand.java" />
+        <option value="$PROJECT_DIR$/src/test/PokerHandTest.java" />
       </list>
     </option>
   </component>
@@ -272,6 +271,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PokerHandTest.should_return_player_1_win_when_input_7S_7C_7H_8D_1S_and_7D_7H_8H_8S_1H" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="poker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.PokerHandTest" />
+      <option name="METHOD_NAME" value="should_return_player_1_win_when_input_7S_7C_7H_8D_1S_and_7D_7H_8H_8S_1H" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PokerHandTest.should_return_player_1_win_when_input_7S_7C_8C_8D_1S_and_7D_7H_8H_5H_1H" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="poker" />
       <extension name="coverage">
@@ -283,22 +298,6 @@
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.PokerHandTest" />
       <option name="METHOD_NAME" value="should_return_player_1_win_when_input_7S_7C_8C_8D_1S_and_7D_7H_8H_5H_1H" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PokerHandTest.should_return_player_2_win_when_input_7S_7C_8C_5D_1S_and_7D_7H_8H_5H_1H" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="poker" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.PokerHandTest" />
-      <option name="METHOD_NAME" value="should_return_player_2_win_when_input_7S_7C_8C_5D_1S_and_7D_7H_8H_5H_1H" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -323,10 +322,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.PokerHandTest" />
+        <item itemvalue="JUnit.PokerHandTest.should_return_player_1_win_when_input_7S_7C_7H_8D_1S_and_7D_7H_8H_8S_1H" />
         <item itemvalue="JUnit.PokerHandTest.should_return_peace_when_input_7S_7C_8C_8D_1S_and_7D_7H_8H_8S_1H" />
         <item itemvalue="JUnit.PokerHandTest.should_return_player_2_win_when_input_7S_7C_8C_8D_1S_and_7D_7H_8H_5H_1H" />
         <item itemvalue="JUnit.PokerHandTest.should_return_player_1_win_when_input_7S_7C_8C_8D_1S_and_7D_7H_8H_5H_1H" />
-        <item itemvalue="JUnit.PokerHandTest.should_return_player_2_win_when_input_7S_7C_8C_5D_1S_and_7D_7H_8H_5H_1H" />
       </list>
     </recent_temporary>
   </component>
@@ -340,7 +339,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1566107714461</updated>
-      <workItem from="1566107717404" duration="15426000" />
+      <workItem from="1566107717404" duration="16174000" />
     </task>
     <task id="LOCAL-00001" summary="first test impl">
       <created>1566109215007</created>
@@ -461,22 +460,17 @@
       <option name="project" value="LOCAL" />
       <updated>1566122665139</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="seventh test impl and refactor">
+      <created>1566123808434</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1566123808434</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PokerHandTest - 2019.08.18 at 17h 46m 06s.xml">
-      <configuration name="PokerHandTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PokerHandTest - 2019.08.18 at 17h 47m 37s.xml">
-      <configuration name="PokerHandTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PokerHandTest - 2019.08.18 at 17h 48m 31s.xml">
-      <configuration name="PokerHandTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PokerHandTest_should_return_player_2_win_when_input_7S_7C_8C_8D_1S_and_7D_7H_8H_5H_1H - 2019.08.18 at 17h 54m 32s.xml">
-      <configuration name="PokerHandTest.should_return_player_2_win_when_input_7S_7C_8C_8D_1S_and_7D_7H_8H_5H_1H" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="PokerHandTest_should_return_player_1_win_when_input_7S_7C_8C_8D_1S_and_7D_7H_8H_5H_1H - 2019.08.18 at 17h 55m 52s.xml">
       <configuration name="PokerHandTest.should_return_player_1_win_when_input_7S_7C_8C_8D_1S_and_7D_7H_8H_5H_1H" configurationId="JUnit" />
     </history-entry>
@@ -495,15 +489,27 @@
     <history-entry file="PokerHandTest - 2019.08.18 at 18h 05m 38s.xml">
       <configuration name="PokerHandTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="PokerHandTest - 2019.08.18 at 18h 19m 48s.xml">
+      <configuration name="PokerHandTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PokerHandTest - 2019.08.18 at 18h 21m 09s.xml">
+      <configuration name="PokerHandTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PokerHandTest - 2019.08.18 at 18h 24m 06s.xml">
+      <configuration name="PokerHandTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PokerHandTest_should_return_player_1_win_when_input_7S_7C_7H_8D_1S_and_7D_7H_8H_8S_1H - 2019.08.18 at 18h 31m 13s.xml">
+      <configuration name="PokerHandTest.should_return_player_1_win_when_input_7S_7C_7H_8D_1S_and_7D_7H_8H_8S_1H" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15426000" />
+    <option name="totallyTimeSpent" value="16174000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18017058" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18017058" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -513,7 +519,7 @@
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.329718" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.329718" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -556,7 +562,8 @@
     <MESSAGE value="sixth test :two pairs to pair" />
     <MESSAGE value="seventh test :two pairs to pair" />
     <MESSAGE value="seventh test :two pairs to two pairs" />
-    <option name="LAST_COMMIT_MESSAGE" value="seventh test :two pairs to two pairs" />
+    <MESSAGE value="seventh test impl and refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="seventh test impl and refactor" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/poker$PokerHandTest.ic" NAME="PokerHandTest Coverage Results" MODIFIED="1566116583601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -681,8 +688,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/PokerHand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="84" column="11" lean-forward="true" selection-start-line="84" selection-start-column="11" selection-end-line="84" selection-end-column="11" />
+        <state relative-caret-position="228">
+          <caret line="84" column="33" lean-forward="true" selection-start-line="84" selection-start-column="33" selection-end-line="84" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -691,8 +698,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/PokerHandTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1311">
-          <caret line="69" column="36" selection-start-line="69" selection-start-column="36" selection-end-line="69" selection-end-column="36" />
+        <state relative-caret-position="209">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
