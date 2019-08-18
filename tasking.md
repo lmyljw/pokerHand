@@ -1,8 +1,8 @@
 # pokerHand
 -------------------
-test-1：单牌比大小
-  input: "7C", "5D"
-  then: player_1_win
+test-1：单牌比大小  
+  input: "7C", "5D"  
+  then: player_1_win  
 -------------------
 test-2：单牌平局
   input: "7C", "7D"
