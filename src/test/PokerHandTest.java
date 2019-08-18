@@ -34,4 +34,5 @@ public class PokerHandTest {
         String actual = pokerHand.play("3S 9H KC 5D 1S", "5S 5H 9C 3H 1H");
         assertEquals(PokerHand.PLAYER_2_WIN, actual);
     }
+
 }
