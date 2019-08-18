@@ -4,6 +4,8 @@ public class Poker implements Comparable<Poker>{
 
     private int number;
     private String color;
+    private int count;
+
 
     public Poker(String number, String color) {
         this.color = color;
@@ -21,12 +23,23 @@ public class Poker implements Comparable<Poker>{
         }
     }
 
+    public Poker() {
+    }
+
     public int getNumber() {
         return number;
     }
 
     public void setNumber(int number) {
         this.number = number;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 
     @Override

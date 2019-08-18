@@ -1,12 +1,7 @@
 package main.java;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
-
-import static java.util.stream.IntStream.range;
 
 public class PokerHand {
 
@@ -23,7 +18,7 @@ public class PokerHand {
         if(player1PokerMap.size() < 5 || player2PokerMap.size() < 5){
             result = -(Integer.compare(player1PokerMap.size(),player2PokerMap.size()));
             if(result == 0) {
-                result = comparePair(player1PokerMap, player2PokerMap);
+                result = compareMaxPoker(player1PokerMap, player2PokerMap);
             }
         }
 
@@ -71,29 +66,33 @@ public class PokerHand {
         }
     }
 
-    public int comparePair(Map<Integer, Long> player1PokerMap,Map<Integer, Long> player2PokerMap){
+    public int compareMaxPoker(Map<Integer, Long> player1PokerMap, Map<Integer, Long> player2PokerMap){
+        int result = 0;
 
-        int player1PairNumber = getPairNumber(player1PokerMap);
-        int player2PairNumber = getPairNumber(player2PokerMap);
+        Poker player1MaxPoker = getMaxPoker(player1PokerMap);
+        Poker player2MaxPoker = getMaxPoker(player2PokerMap);
 
-        return Integer.compare(player1PairNumber, player2PairNumber);
-
+        result = Integer.compare(player1MaxPoker.getCount(), player2MaxPoker.getCount());
+        if(result == 0){
+            result = player1MaxPoker.compareTo(player2MaxPoker);
+        }
+        return result;
     }
 
-    public int getPairNumber(Map<Integer, Long> playerPokerMap){
+    public Poker getMaxPoker(Map<Integer, Long> playerPokerMap){
 
         int playerPairNumber = 0;
+        Poker maxPoker = new Poker();
 
         for (Integer number : playerPokerMap.keySet()) {
             Long count = playerPokerMap.get(number);
-            if (count == 2) {
-                if (number > playerPairNumber){
-                    playerPairNumber = number;
+            if (count >= 2) {
+                if (number > playerPairNumber || count > playerPokerMap.get(playerPairNumber)){
+                    maxPoker.setNumber(number);
+                    maxPoker.setCount(count.intValue());
                 }
             }
         }
-
-        return playerPairNumber;
-
+        return maxPoker;
     }
 }
