@@ -29,4 +29,9 @@ public class PokerHandTest {
         String actual = pokerHand.play("3S 9H KC 5D 1S", "5S JH 9C 3H 1H");
         assertEquals(PokerHand.PLAYER_1_WIN, actual);
     }
+    @Test
+    public void should_return_player_2_win_when_input_3S_9H_KC_5D_1S_and_5S_5H_9C_3H_1H() {
+        String actual = pokerHand.play("3S 9H KC 5D 1S", "5S 5H 9C 3H 1H");
+        assertEquals(PokerHand.PLAYER_2_WIN, actual);
+    }
 }
