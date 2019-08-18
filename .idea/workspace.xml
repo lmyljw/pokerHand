@@ -148,7 +148,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PokerHandTest.should_return_peace_when_input_7C_and_7D">
+  <component name="RunManager" selected="JUnit.PokerHandTest.should_return_player_2_win_when_input_7C_and_TD">
     <configuration name="PokerHandTest.should_return_1th_player_when_input_7C_and_5D" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="poker" />
       <extension name="coverage">
@@ -181,8 +181,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PokerHandTest.should_return_player_2_win_when_input_7C_and_TD" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="poker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.PokerHandTest" />
+      <option name="METHOD_NAME" value="should_return_player_2_win_when_input_7C_and_TD" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PokerHandTest.should_return_player_2_win_when_input_7C_and_TD" />
         <item itemvalue="JUnit.PokerHandTest.should_return_peace_when_input_7C_and_7D" />
         <item itemvalue="JUnit.PokerHandTest.should_return_1th_player_when_input_7C_and_5D" />
       </list>
